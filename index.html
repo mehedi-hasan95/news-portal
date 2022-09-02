@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap css cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- fontawesome script  -->
+    <script src="https://kit.fontawesome.com/5b27e677dd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>News Tribune: An online newspaper</title>
 </head>
 <body>
     <!-- navmenu  -->
     <header>
         <!-- Nav Menu  -->
-        <nav class="navbar navbar-expand-lg my-5 container">
+        <nav class="navbar navbar-expand-lg my-5 container border-bottom border-2 pb-3 px-2">
             <a class="navbar-brand fs-4 fw-semibold text-primary" href="index.html"><span class="bg-primary text-white py-1 px-2 rounded-3">News</span> Tribune</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,8 +35,67 @@
             </div>
         </nav>
     </header>
+    <section class="container">
+        <ul class="text-center navbar-nav d-md-flex gap-4 justify-content-between flex-row flex-wrap">
+            <li class="nav-item">
+                <a class="nav-link fs-5" aria-current="page" href="#">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5" href="#">Blog</a>
+            </li>
+        </ul>
+    </section>
+    <section class="container bg-white rounded-3 mt-5">
+        <h2 class="py-4">4 items found for the category Home</h2>
+    </section>
 
-
+    <!-- Main section  -->
+    <main class="container">
+        <div class="card mb-3 mt-5 bg-white border-0 rounded-3">
+            <div class="row p-4">
+              <div class="col-md-3 text-center text-md-start">
+                <img src="img/unsplash_EhTcC9sYXsw.png" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title fs-3">Card title</h5>
+                  <p class="card-text text-dark">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap g-4">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="img/Avatar.png" alt="">
+                            <div class="ps-2">
+                                <h6>Mehedi</h6>
+                                <p>02-sep-22</p>
+                            </div>
+                        </div>
+                        <h5><i class="fa-regular fa-eye pe-3"></i>1M</h5>
+                        <div>
+                            <i class="fa-regular fa-star fs-5 pe-2"></i><i class="fa-regular fa-star fs-5 pe-2"></i><i class="fa-regular fa-star fs-5 pe-2"></i><i class="fa-regular fa-star fs-5 pe-2"></i><i class="fa-regular fa-star fs-5 pe-2"></i>
+                        </div>
+                        <button class="text-primary border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fa-solid fa-arrow-right fs-3"></i>
+                        </button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </main>
 
     <!-- footer section  -->
     <footer>
