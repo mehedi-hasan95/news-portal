@@ -15,9 +15,21 @@ const displaCategory = categorys => {
         const div = document.createElement('li');
         div.classList.add('nav-item')
         div.innerHTML = `
-        <a class="nav-link fs-5" aria-current="page" href="#">${category.category_name}</a>
+        <a class="nav-link fs-5" aria-current="page" href="#" onclick="dsc('${category.category_id}')">${category.category_name}</a>
         `
         addCategory.appendChild(div);
+    }
+}
+
+
+const dsc = async (catId) => {
+    const url = `https://openapi.programming-hero.com/api/news/category/${catId}`;
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        console.log( data.data );
+    } catch (error) {
+        console.log( error );
     }
 }
 
