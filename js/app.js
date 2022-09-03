@@ -36,8 +36,16 @@ const loadSingleCategories = async (catId) => {
 }
 
 const displaySingleCategory = allCategories => {
+    // find the length 
+    const theLenght = allCategories.length;
+    console.log ( theLenght );
+    const findLength = document.getElementById('find-lenth');
+    findLength.innerHTML = `${theLenght} items found for this category`;
+
+    // Display all categorys
     const contentContainer = document.getElementById('content-container');
     contentContainer.innerHTML = '';
+    
     allCategories.forEach(cat => {
         const div = document.createElement('div');
         div.classList.add('row', 'p-4', 'mt-4', 'bg-white', 'border-0', 'rounded-3');
