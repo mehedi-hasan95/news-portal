@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap css cdn  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Blog News Tribune: An online newspaper</title>
 </head>
+
 <body>
     <!-- navmenu  -->
     <header>
         <!-- Nav Menu  -->
         <nav class="navbar navbar-expand-lg my-5 container">
-            <a class="navbar-brand fs-4 fw-semibold text-primary" href="index.html"><span class="bg-primary text-white py-1 px-2 rounded-3">News</span> Tribune</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fs-4 fw-semibold text-primary" href="index.html"><span
+                    class="bg-primary text-white py-1 px-2 rounded-3">News</span> Tribune</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-lg-end" id="navbarNav">
@@ -33,14 +39,86 @@
         </nav>
     </header>
 
-
+    <!-- Question Sections  -->
+    <section class="container mb-5">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is the difference between var, let and const?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>var:</strong> The scope of a var variable is functional scope. var can be updated and
+                        re-declared into the scope. You can change var value anywhere. For example, you can change var
+                        value from any scope.<br>
+                        <strong>let:</strong> let is comes from es6. The scope of a let variable is block scope. You can update let value
+                        but can't declare another let into the scope. It can be declared without initialization.<br>
+                        <strong>const:</strong> The scope of a const variable is block scope. It cannot be updated or re-declared into
+                        the scope.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What is the difference between the arrow function and the regular function?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        The arrow function — also called the fat arrow function — is a new feature introduced in ES6 that provides a more concise syntax for writing function expressions. Although both regular function and arrow function work similarly, there are some differences between them. This value (aka execution context) is dynamic inside a regular JavaScript function. This behavior inside an arrow function is quite different from this behavior of regular functions. The arrow function does not define its own execution context. The regular function considers " this" ‍as the object at its immediate level, whereas the arrow function sets "this" as global.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What is the difference between map(), forEach, filter and find?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>map()</strong> usually works with all elements of an array. map() creates a new array by calling a function for every array element. map() does not change the original array. map() does not execute the function for empty elements. map() can return<br>
+                        <strong>forEach()</strong> works like map(). But forEach does not return anything. The forEach() method calls a function for each element in an array. The forEach() method is not executed for empty elements.<br>
+                        <strong>filter()</strong> finds and outputs all elements in an array. The filter() method creates a new array filled with elements that pass a test provided by a function. The filter() method does not change the original array.<br>
+                        <strong>find()</strong> works like filter. But the difference is that find returns the first one it finds.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Why use template string?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Template strings</strong> are literals delimited with backtick (``) characters. Template strings give us many advantages. For example, if we write something between (``), we can use spaces wherever we want or line breaks wherever we want. There is no need to add “+” so it is easy and straightforward to use. We can easily make something dynamic using template strings. Nesting a template is one of the easiest ways to get configurable strings.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- footer section  -->
     <footer>
         <p class="text-center container text-dark">Copyright &copy; 2022, All right reserved.</p>
     </footer>
     <!-- bootstrap js cdn  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>
