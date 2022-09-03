@@ -1,5 +1,3 @@
-// Mehedi 
-
 const loadCategory = async() => {
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     try {
@@ -9,10 +7,10 @@ const loadCategory = async() => {
     } catch (error) {
         displaCategory( error );
     }
+    loadingSpinner(false);
 }
 
 const displaCategory = categorys => {
-    loadingSpinner(true);
     const addCategory = document.getElementById('add-category');
     for (const category of categorys) {
         const div = document.createElement('li');
@@ -22,6 +20,7 @@ const displaCategory = categorys => {
         `
         addCategory.appendChild(div);
     }
+    loadingSpinner(true);
 }
 
 
