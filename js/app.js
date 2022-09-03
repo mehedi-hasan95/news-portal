@@ -12,6 +12,7 @@ const loadCategory = async() => {
 }
 
 const displaCategory = categorys => {
+    loadingSpinner(true);
     const addCategory = document.getElementById('add-category');
     for (const category of categorys) {
         const div = document.createElement('li');
@@ -55,7 +56,7 @@ const displaySingleCategory = allCategories => {
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title fs-3">${cat.title}</h5>
-                <p class="card-text text-dark text-length">${cat.details.slice(0, 400)}</p>
+                <p class="card-text text-dark text-length">${cat.details.slice(0, 400) + '...'}</p>
                 <div class="d-flex justify-content-between align-items-center flex-wrap g-4">
                     <div class="d-flex">
                         <img src="${cat.author.img}" alt="" class="author-img">
@@ -74,6 +75,7 @@ const displaySingleCategory = allCategories => {
         `
         contentContainer.appendChild(div);
     });
+    loadingSpinner(false);
 }
 
 const loadPost = async postId => {
@@ -119,6 +121,17 @@ const displayPost = posts => {
         </div>
     </div>
     `
+}
+
+// load spinner 
+
+const loadingSpinner = isTrue => {
+    const isLoad = document.getElementById('load-spinner');
+    if (isTrue) {
+        isLoad.classList.remove('d-none');
+    } else {
+        isLoad.classList.add('d-none');
+    }
 }
 
 loadCategory();
