@@ -38,7 +38,6 @@ const loadSingleCategories = async (catId) => {
 const displaySingleCategory = allCategories => {
     // find the length 
     const theLenght = allCategories.length;
-    console.log ( theLenght );
     const findLength = document.getElementById('find-lenth');
     findLength.innerHTML = `${theLenght} items found for this category`;
 
@@ -66,7 +65,7 @@ const displaySingleCategory = allCategories => {
                         </div>
                     </div>
                     <h5><i class="fa-regular fa-eye pe-3"></i>${cat.total_view}</h5>
-                    <button class="text-primary border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button onclick="loadPost('${cat._id}')" class="text-primary border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-arrow-right fs-3"></i>
                     </button>
                 </div>
@@ -75,6 +74,40 @@ const displaySingleCategory = allCategories => {
         `
         contentContainer.appendChild(div);
     });
+}
+
+const loadPost = async postId => {
+    const url = `https://openapi.programming-hero.com/api/news/${postId}`;
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayPost( data.data );
+    } catch (error){
+        displayPost( error );
+    }
+}
+
+const displayPost = post => {
+    const singlePost = document.getElementById('single-post');
+    singlePost.innerHTML = `
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+    `
 }
 
 loadCategory();
