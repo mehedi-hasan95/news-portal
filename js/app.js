@@ -29,6 +29,10 @@ const loadSingleCategories = async (catId) => {
     try {
         const res = await fetch(url);
         const data = await res.json();
+        // Sorting the most populer Post 
+        data.data.sort((a, b) => {
+            return b.total_view - a.total_view;
+        });
         displaySingleCategory( data.data );
     } catch (error) {
         displaySingleCategory( error );
