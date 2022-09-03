@@ -7,7 +7,6 @@ const loadCategory = async() => {
     } catch (error) {
         displaCategory( error );
     }
-    loadingSpinner(false);
 }
 
 const displaCategory = categorys => {
@@ -20,11 +19,11 @@ const displaCategory = categorys => {
         `
         addCategory.appendChild(div);
     }
-    loadingSpinner(true);
 }
 
 
 const loadSingleCategories = async (catId) => {
+    loadingSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${catId}`;
     try {
         const res = await fetch(url);
