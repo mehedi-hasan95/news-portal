@@ -60,11 +60,11 @@ const displaySingleCategory = allCategories => {
                     <div class="d-flex">
                         <img src="${cat.author.img}" alt="" class="author-img">
                         <div class="ps-2">
-                            <h6>${cat.author.name}</h6>
-                            <p>${cat.author.published_date}</p>
+                            <h6>${cat.author.name ? cat.author.name : 'No author'}</h6>
+                            <p>${cat.author.published_date ? cat.author.published_date : 'No published date'}</p>
                         </div>
                     </div>
-                    <h5><i class="fa-regular fa-eye pe-3"></i>${cat.total_view}</h5>
+                    <h5><i class="fa-regular fa-eye pe-3"></i>${cat.total_view ? cat.total_view : 'No view'}</h5>
                     <button onclick="loadPost('${cat._id}')" class="text-primary border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-arrow-right fs-3"></i>
                     </button>
@@ -81,25 +81,36 @@ const loadPost = async postId => {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        displayPost( data.data );
-    } catch (error){
+        displayPost( data.data[0] );
+    } catch (error) {
         displayPost( error );
     }
 }
 
-const displayPost = post => {
+const displayPost = posts => {
     const singlePost = document.getElementById('single-post');
     singlePost.innerHTML = `
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">${posts.title}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="card">
-                <img src="" class="card-img-top" alt="...">
+                <img src="${posts.thumbnail_url}" class="card-img-top" alt="...">
+                <div class="d-flex mt-4 p-2">
+                    <img src="${posts.author.img ? posts.author.img : 'No author Image'}" alt="" class="author-img">
+                    <div class="ps-2">
+                        <h6>Name: ${posts.author.name ? posts.author.name : 'No Author'}</h6>
+                        <p>Published: ${posts.author.published_date ? posts.author.published_date : 'No Published date'}</p>
+                    </div>
+                </div>
+                <div class="ps-3">
+                    <h6>Badge: ${posts.rating.badge ? posts.rating.badge : 'No rating'}</h6>
+                    <p>Rating Number: ${posts.rating.number ? posts.rating.number : 'No rating avilable'}</p>
+                </div>
                 <div class="card-body">
-                <p class="card-text"></p>
+                <p class="card-text">${posts.details}</p>
                 </div>
             </div>
         </div>
